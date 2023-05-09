@@ -1,13 +1,20 @@
-const { defineConfig } = require('cypress')
+// @ts-check
+import { defineConfig } from 'cypress'
 
-module.exports = defineConfig({
+import { getTwilioInfo, getTwilioSms } from './cypress/twilio/check-sms.mjs'
+
+export default defineConfig({
   e2e: {
     // baseUrl, etc
     supportFile: false,
     fixturesFolder: false,
     setupNodeEvents(on, config) {
-      // implement node event listeners here
-      // and load any plugins that require the Node environment
+      // make sure we have Twilio account values
+      getTwilioInfo()
+
+      on('task', {
+        getTwilioSms,
+      })
     },
-  }
+  },
 })
