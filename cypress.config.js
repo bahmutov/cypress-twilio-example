@@ -1,7 +1,11 @@
 // @ts-check
 import { defineConfig } from 'cypress'
 
-import { getTwilioInfo, getTwilioSms } from './cypress/twilio/check-sms.mjs'
+import {
+  getTwilioInfo,
+  getTwilioSms,
+  retryTwilioSms,
+} from './cypress/twilio/check-sms.mjs'
 
 export default defineConfig({
   e2e: {
@@ -13,7 +17,8 @@ export default defineConfig({
       getTwilioInfo()
 
       on('task', {
-        getTwilioSms,
+        getTwilioSms, // no retries
+        retryTwilioSms, // with retries
       })
     },
   },

@@ -23,6 +23,9 @@
   "homepage": "https://github.com/bahmutov/cypress-twilio-example#readme",
   "devDependencies": {
     "cypress": "^12.11.0",
-    "prettier": "^2.8.8"
+    "cypress-recurse": "^1.33.0",
+    "luxon": "^3.3.0",
+    "prettier": "^2.8.8",
+    "twilio": "^4.11.0"
   }
 }

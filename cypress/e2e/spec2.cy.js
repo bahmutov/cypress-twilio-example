@@ -1,15 +1,9 @@
 /// <reference types="cypress" />
 
-import { recurse } from 'cypress-recurse'
-
-it('retrieves the last SMS', () => {
+it('retrieves the last SMS using retryTwilioSms', () => {
   cy.log('Checking SMS')
-  // call the first function that calls cy.task
-  // until the second predicate function returns true
-  recurse(() => cy.task('getTwilioSms'), Cypress._.isString, {
-    log: false, // no need to log every iteration
-    timeout: 60_000, // retry for up to 1 minute
-    delay: 5_000, // wait 5 seconds between the tries
+  cy.task('retryTwilioSms', {
+    timeout: 60_000, // let the task run up to 1 minute
   })
     // recurse yields the result of the command
     // which in our case is the result from the task
