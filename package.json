@@ -1,0 +1,27 @@
+{
+  "name": "cypress-twilio-example",
+  "version": "1.0.0",
+  "description": "Example checking SMS messages from Cypress tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/cypress-twilio-example.git"
+  },
+  "keywords": [
+    "cypress-example",
+    "twilio-example"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/cypress-twilio-example/issues"
+  },
+  "homepage": "https://github.com/bahmutov/cypress-twilio-example#readme",
+  "devDependencies": {
+    "cypress": "^12.11.0",
+    "prettier": "^2.8.8"
+  }
+}
